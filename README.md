@@ -50,7 +50,15 @@ Have fun! This medium is prime for easter eggs and (class appropriate) inside jo
 
 PLANING PHASE: 
 
-type:  Apocalyptic BlackJack 
+theme : apocalyptic
+
+
+
+
+
+
+
+<!-- type:  Apocalyptic BlackJack 
 
 What we need: 
 Suits 
@@ -63,9 +71,11 @@ Shuffle Function , tradition dealings hold 2-3 decks(52cards/deck)
 
 Calculation Function 
 
-Winner/Loser
+Winner/Loser -->
 
-Funtion for Split(strech goal), hit, stay, fold.. if we add betting. call
+
+
+<!-- Funtion for Split(strech goal), hit, stay, fold.. if we add betting. call
 
 n>21 = bust
 n=< 21 = good
@@ -77,163 +87,128 @@ ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A']
 
 deck<<[rank,suit] -->
 
-
+<!-- 
 calulations:
 
 .map through an array 
 sum 
 compare
-
+ -->
 
 
 <!-- values to the cards: 
 if value == 'A'
 total += 11
-ace_count += 1 -->
+ace_count += 1 --> -->
 
 
-
-shuffling:
-
- const drawCard = () => {
-          const draw = `${rank[Math.floor(Math.random() * rank.length)]} ${suit[Math.floor(Math.random() * suit.length)]}`
-          if(hand.indexOf(draw) === -1) {
-            setHand([...hand, draw])
-          } else if(hand.length !== 52) {
-            drawCard()
-          } else {
-            alert("All cards have been dealt.")
-          }
-        }
- const shuffle = () => {
-          setHand([])
-        }
+<!-- # Text-based Game Challenge
 
 
+# class Card
+#     attr_reader :rank, :suit
+  
+#     def initialize(rank, suit)
+#       @rank = rank
+#       @suit = suit
+#     end
+  
+#     def to_s
+#       "#{@rank} of #{@suit}"
+#     end
+#   #Value for cards
+#     def calculate_value
+#       if ['K', 'Q', 'J'].include?(@rank)
+#         10
+#       elsif @rank == 'A'
+#         11
+#       else
+#         @rank.to_i
+#       end
+#     end
+#   end
+  
+#   def initialize_deck
+#     deck = []
+#     suits = ["❤️", "♦️", "♠️", "♣️"]
+#     ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
+  
+#     suits.each do |suit|
+#       ranks.each do |rank|
+#         deck << Card.new(rank, suit)
+#       end
+#     end
+  
+#     deck
+#   end
+  
+#   deck = initialize_deck
+  
+#   deck.each do |card|
+#     puts card.to_s
+#     puts "Value: #{card.calculate_value}"
+#   end
+  
 
-        for reference :
+# # Output:
+# # 2 of ❤️
+# # 3 of ❤️
+# # 4 of ❤️
+# # 5 of ❤️
+# # 6 of ❤️
+# # 7 of ❤️
+# # 8 of ❤️
+# # 9 of ❤️
+# # 10 of ❤️
+# # J of ❤️
+# # Q of ❤️
+# # K of ❤️
+# # A of ❤️
+# # 2 of ♦️
+# # 3 of ♦️
+# # 4 of ♦️
+# # 5 of ♦️
+# # 6 of ♦️
+# # 7 of ♦️
+# # 8 of ♦️
+# # 9 of ♦️
+# # 10 of ♦️
+# # J of ♦️
+# # Q of ♦️
+# # K of ♦️
+# # A of ♦️
+# # 2 of ♠️
+# # 3 of ♠️
+# # 4 of ♠️
+# # 5 of ♠️
+# # 6 of ♠️
+# # 7 of ♠️
+# # 8 of ♠️
+# # 9 of ♠️
+# # 10 of ♠️
+# # J of ♠️
+# # Q of ♠️
+# # K of ♠️
+# # A of ♠️
+# # 2 of ♣️
+# # 3 of ♣️
+# # 4 of ♣️
+# # 5 of ♣️
+# # 6 of ♣️
+# # 7 of ♣️
+# # 8 of ♣️
+# # 9 of ♣️
+# # 10 of ♣️
+# # J of ♣️
+# # Q of ♣️
+# # K of ♣️
+# # A of ♣️
 
-        class Card
-    attr_reader :rank, :suit
-  
-    def initialize(rank, suit)
-      @rank = rank
-      @suit = suit
-    end
-  
-    def to_s
-      "#{@rank} of #{@suit}"
-    end
-  
-    def calculate_value
-      if ['K', 'Q', 'J'].include?(@rank)
-        10
-      elsif @rank == 'A'
-        11
-      else
-        @rank.to_i
-      end
-    end
-  end
-  
-  def initialize_deck
-    deck = []
-    suits = ["❤️", "♦️", "♠️", "♣️"]
-    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
-  
-    suits.each do |suit|
-      ranks.each do |rank|
-        deck << Card.new(rank, suit)
-      end
-    end
-  
-    deck
-  end
-  
-  def start_game
-    deck = initialize_deck
-    player_hand = []
-    dealer_hand = []
-    
-    2.times do
-      deal_card(deck, player_hand)
-      deal_card(deck, dealer_hand)
-    end
-  
-    play_player_turn(deck, player_hand)
-    play_dealer_turn(deck, dealer_hand) unless player_busted?(player_hand)
-    determine_winner(player_hand, dealer_hand)
-  end
-  
-  def deal_card(deck, hand)
-    card = deck.pop
-    hand << card
-  end
-  
-  def calculate_hand_value(hand)
-    value = hand.sum(&:calculate_value)
-    hand.select { |card| card.rank == 'A' }.count.times do
-      break if value <= 21
-      value -= 10
-    end
-    value
-  end
-  
-  def play_player_turn(deck, player_hand)
-    while calculate_hand_value(player_hand) < 21
-      show_player_hand(player_hand)
-      action = get_player_action
-      if action == 'h'
-        deal_card(deck, player_hand)
-      elsif action == 's'
-        break
-      else
-        puts "Invalid action. Please enter 'h' to hit or 's' to stand."
-      end
-    end
-    show_player_hand(player_hand)
-  end
-  
-  def get_player_action
-    puts "What would you like to do? (h)it or (s)tand"
-    gets.chomp.downcase
-  end
-  
-  def play_dealer_turn(deck, dealer_hand)
-    while calculate_hand_value(dealer_hand) < 17
-      deal_card(deck, dealer_hand)
-    end
-    show_dealer_hand(dealer_hand)
-  end
-  
-  def player_busted?(player_hand)
-    calculate_hand_value(player_hand) > 21
-  end
-  
-  def determine_winner(player_hand, dealer_hand)
-    player_value = calculate_hand_value(player_hand)
-    dealer_value = calculate_hand_value(dealer_hand)
-  
-    if player_busted?(player_hand)
-      puts "You busted! Dealer wins."
-    elsif dealer_value > 21
-      puts "Dealer busted! You win."
-    elsif player_value > dealer_value
-      puts "You win!"
-    elsif dealer_value > player_value
-      puts "Dealer wins."
-    else
-      puts "It's a tie."
-    end
-  end
-  
-  def show_player_hand(player_hand)
-    puts "Your hand: "
-    player_hand.each { |card| puts card.to_s }
-    puts "Total value: #{calculate_hand_value(player_hand)}"
-  end
-  
-  def show_dealer_hand(dealer_hand)
-    puts "Dealer's hand: "
-    dealer_hand.each
-  
+# #winning possibilities:
+
+# if player_value == 21
+#     puts "congrats"
+# end
+
+# while player_value < 21
+     -->
