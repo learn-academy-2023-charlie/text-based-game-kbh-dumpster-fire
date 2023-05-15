@@ -1,49 +1,14 @@
+def game_intro
+  puts "Welcome to the jungle!"
+  puts "You wake up and find yourself on an island."
+  puts "Clueless as to how you arrived, you begin to venture the island to find some answers."
+  puts
+end
+
 def name
   puts "Before we begin, what is your name?"
-  gets.chomp
-end
-
-
-
-def display_intro
-  puts "Welcome to the Zombie Apocalypse!"
-  puts "You wake up to find yourself in the midst of a zombie-infested city."
-  puts "Your mission is to survive and find a way to escape."
-  puts display_zombie
-  puts
-  puts
-  puts 
-end
-def display_zombie
-  zombie = <<~ASCII
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣶⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣴⣶⣶⣿⣿⣿⣿⣶⣦⣄⣀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠆⠀⠀⠀⠀⠀⠈⠉⠀⣿⣿⣿⣿⣿⣷⠀
-  ⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⠃⠀⠀⠀⠀⠀⠀⠀⠀⣿⡟⠹⣿⣿⣿⡆
-  ⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⡇
-  ⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⣠⣼⣿⣿⣿⣿⣿⡟⠀⣿⣿⡿⠻⠟⠀⠀⠀⠀⠸⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⣴⣿⣿⣿⣿⣿⣿⣿⣿⡇⢠⣿⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠻⣿⣿⣿⣿⣿⠋⢻⣿⣧⣻⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠙⠛⣿⣿⠏⠀⠀⠉⠃⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⠋⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⡏⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠈⢻⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-  ASCII
-end
-
-def join(name)
-
+  name = gets.chomp
+  puts "Hello, #{name}!"
   puts "Would you like to join, #{name} (yes/no)?"
   answer = gets.chomp.downcase
   if answer == "yes"
@@ -51,110 +16,106 @@ def join(name)
   else
     puts "Too bad, you can't leave"
   end
+  puts "To begin your adventure, pick one item to aid you."
+  puts "Choose between a bed, a spoon, or a radio."
+  puts
 end
-sleep(2)
-user_name = name
-join(user_name)
 
-def get_user_choice(choices)
-  loop do
-    puts "What will you do?"
-    choices.each_with_index { |choice, index| puts "#{index + 1}. #{choice}" }
-    input = gets.chomp.to_i
-    return input if (1..choices.length).include?(input)
+def get_item1
+  item = gets.chomp.downcase
+  if item == "bed"
+    puts "You have chosen a bed."
+    puts "You sleep for a while."
+    puts "You have a comfortable place to sleep, but you feel scared and lonely."
+  elsif item == "spoon"
+    puts "You have chosen a spoon."
+    puts "You take a bite of your imaginary food."
+    puts "You feel sad and depressed."
+  elsif item == "radio"
+    puts "You have chosen a radio."
+    puts "You listen to the radio."
+    puts "You hear a song."
+    puts "You feel refreshed."
+  else
     puts "Invalid choice. Please try again."
+    get_item1
   end
 end
 
+def cont_story
+  puts "After gathering your thoughts, you take your item and begin venturing the island for clues."
+  puts "You find a cave and begin adventuring through it."
+  puts "You come to a 3-way junction."
+  puts "Which path do you choose (left, right, or center)?"
+end
 
-def explore_city
-  puts "You venture into an abandoned city..."
-  puts "You encounter a group of hot women!"
+def get_path
+  path = gets.chomp.downcase
+  if path == "left"
+    puts "You chose the left path."
+    puts "You venture down and see a hot girl from afar"
+    puts "You chase after her and end up falling into a pitfall with spikes."
+    puts "You die. Cause you're too thirsty."
+  elsif path == "right"
+    puts "You chose the right path."
+    puts "You venture down and find a ladder."
+    puts "You climb the ladder and find a secret room."
+    puts "Inside the room, you find canned food that has clearly been there for years."
+    puts "You eat the food and feel refreshed."
+    continue_quest
+  elsif path == "center"
+    puts "You chose the center path."
+    puts "You venture down and find a secret room."
+    puts "Inside the room, you find a secret door."
+    puts "You open the door and find a secret passage."
+    puts "You venture through the secret passage and find yourself in an endless maze."
+    puts "While scavenging the maze, you come across a mystical beast that offers you freedom if you answer their riddle."
+    puts
+    puts
+    puts "The riddle is:"
+    puts "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?"
 
-  
-  choices = ["Join them", "Go your own way"]
-  choice = get_user_choice(choices)
-
-  if choice == 1
-    puts "You join the group of survivors. Strength in numbers!"
-    # Add group item to the inventory
-  else
-    puts "You decide to go your own way. Good luck!"
+    user_answer = gets.chomp.downcase
+    if user_answer == "echo"
+      puts "Congratulations! You answered correctly, and the mystical beast grants you freedom."
+      puts "You find your way out of the maze and continue your quest."
+      continue_quest
+   
+    else
+      puts "Oops! That's not the correct answer. The mystical beast denies your request for freedom."
+      puts "You remain trapped in the maze."
+      puts "You eventually die alone in the maze."
+    end
   end
-
-  puts "You continue your journey..."
-  # Continue the exploration
-end
-sleep(3)
-def scavenge_supplies(inventory)
-  puts "You search for supplies in an abandoned building..."
-  
-  # Add scavenging logic here
-  found_items = ["Food", "Water", "Medicine","Machete"]
-  
-  puts "You found the following items: #{found_items.join(', ')}"
-  
-  inventory.concat(found_items)
-  
-  puts "Your inventory now contains: #{inventory.join(', ')}"
 end
 
-inventory = []
-scavenge_supplies(inventory)
+def continue_quest
+  puts "You have successfully completed the previous challenge and continue your quest."
+  puts "You explore more of the island and come across a small community."
+  puts "Do you wish to speak with them to explore the village or continue solo?"
+  puts "Pick explore or solo"
 
-def fight_zombies(inventory)
-  puts "You come across a horde of zombies!"
-  puts "What will you do?"
-  choices = ["Fight them", "Run for your life"]
-  choice = get_user_choice(choices)
-
-  if choice == 1
-    puts "You fight off the zombies with all your strength!"
-    # Implement combat logic
-    puts "You survive the battle, but you're injured."
-    # Adjust player's health
-  else
-    puts "You run as fast as you can, narrowly escaping the zombies."
+  answer = gets.chomp.downcase
+  if answer == "explore"
+    puts "You check out the village and find out that they are all dead."
+    puts "You continue on your quest."
+    continue_quest_side
+  elsif answer == "solo"
+    puts "You continue on your quest."
+    continue_quest
   end
-
-  puts "You continue your journey..."
-  # Continue the exploration and storytelling
 end
 
-def find_escape_route
-  puts "You discover a potential escape route: a hidden underground tunnel."
-  puts "However, it is blocked by a heavy metal door."
-  puts "What will you do?"
-  choices = ["Look for a key", "Try to force the door open"]
-  choice = get_user_choice(choices)
-
-  if choice == 1
-    puts "You search nearby areas and find the key to the door!"
-    # Add key to the inventory
-  else
-    puts "You try to force the door open, but it's too sturdy."
-  end
-
-  puts "You manage to open the door and enter the tunnel."
-  puts "Freedom awaits!"
+def continue_quest_side
+  puts "You investigate the village for clues as to what happened."
+  puts "Maybe you'll find clues to your situation as well."
+  puts "You collect a journal written in another language and a knife you collected from one of the corpses."
+  continue_quest
 end
 
-def game_over(message)
-  puts "Game Over: #{message}"
-  exit
-end
-
-def play_game
-  display_intro
-  inventory = []
-  explore_city
-  scavenge_supplies(inventory)
-  fight_zombies(inventory)
-  # Continue the game flow
-  find_escape_route
-
-  # Example of game over condition:
-  game_over("Oh no! You got surrounded by a massive horde of zombies and couldn't escape.")
-end
-
-play_game
+# Main program
+game_intro
+name
+get_item1
+cont_story
+get_path
