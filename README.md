@@ -46,3 +46,169 @@ Think about the difference between `p` and `puts`. Using `p` in development is h
 Keep your code simple. You have all the tools you need to effectively construct the game. This is an exercise in organization, planning, and creativity.
 
 Have fun! This medium is prime for easter eggs and (class appropriate) inside jokes.
+
+
+PLANING PHASE: 
+
+theme : apocalyptic
+
+
+
+
+
+
+
+<!-- type:  Apocalyptic BlackJack 
+
+What we need: 
+Suits 
+Ranks 
+
+alternating players?:
+
+
+Shuffle Function , tradition dealings hold 2-3 decks(52cards/deck)
+
+Calculation Function 
+
+Winner/Loser -->
+
+
+
+<!-- Funtion for Split(strech goal), hit, stay, fold.. if we add betting. call
+
+n>21 = bust
+n=< 21 = good
+
+<!-- initialize out deck 
+deck = []
+suits =  ["❤️", "♦️", "♠️", "♣️"]
+ranks = [2,3,4,5,6,7,8,9,10,'J','Q','K','A']
+
+deck<<[rank,suit] -->
+
+<!-- 
+calulations:
+
+.map through an array 
+sum 
+compare
+ -->
+
+
+<!-- values to the cards: 
+if value == 'A'
+total += 11
+ace_count += 1 --> -->
+
+
+<!-- # Text-based Game Challenge
+
+
+# class Card
+#     attr_reader :rank, :suit
+  
+#     def initialize(rank, suit)
+#       @rank = rank
+#       @suit = suit
+#     end
+  
+#     def to_s
+#       "#{@rank} of #{@suit}"
+#     end
+#   #Value for cards
+#     def calculate_value
+#       if ['K', 'Q', 'J'].include?(@rank)
+#         10
+#       elsif @rank == 'A'
+#         11
+#       else
+#         @rank.to_i
+#       end
+#     end
+#   end
+  
+#   def initialize_deck
+#     deck = []
+#     suits = ["❤️", "♦️", "♠️", "♣️"]
+#     ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
+  
+#     suits.each do |suit|
+#       ranks.each do |rank|
+#         deck << Card.new(rank, suit)
+#       end
+#     end
+  
+#     deck
+#   end
+  
+#   deck = initialize_deck
+  
+#   deck.each do |card|
+#     puts card.to_s
+#     puts "Value: #{card.calculate_value}"
+#   end
+  
+
+# # Output:
+# # 2 of ❤️
+# # 3 of ❤️
+# # 4 of ❤️
+# # 5 of ❤️
+# # 6 of ❤️
+# # 7 of ❤️
+# # 8 of ❤️
+# # 9 of ❤️
+# # 10 of ❤️
+# # J of ❤️
+# # Q of ❤️
+# # K of ❤️
+# # A of ❤️
+# # 2 of ♦️
+# # 3 of ♦️
+# # 4 of ♦️
+# # 5 of ♦️
+# # 6 of ♦️
+# # 7 of ♦️
+# # 8 of ♦️
+# # 9 of ♦️
+# # 10 of ♦️
+# # J of ♦️
+# # Q of ♦️
+# # K of ♦️
+# # A of ♦️
+# # 2 of ♠️
+# # 3 of ♠️
+# # 4 of ♠️
+# # 5 of ♠️
+# # 6 of ♠️
+# # 7 of ♠️
+# # 8 of ♠️
+# # 9 of ♠️
+# # 10 of ♠️
+# # J of ♠️
+# # Q of ♠️
+# # K of ♠️
+# # A of ♠️
+# # 2 of ♣️
+# # 3 of ♣️
+# # 4 of ♣️
+# # 5 of ♣️
+# # 6 of ♣️
+# # 7 of ♣️
+# # 8 of ♣️
+# # 9 of ♣️
+# # 10 of ♣️
+# # J of ♣️
+# # Q of ♣️
+# # K of ♣️
+# # A of ♣️
+
+# #winning possibilities:
+
+# if player_value == 21
+#     puts "congrats"
+# end
+
+# while player_value < 21
+     -->
